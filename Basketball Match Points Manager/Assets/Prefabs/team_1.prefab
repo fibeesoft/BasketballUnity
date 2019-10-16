@@ -291,7 +291,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3504088038578572957}
-        m_MethodName: GetButtonName
+        m_MethodName: AddPoint
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
