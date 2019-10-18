@@ -28,8 +28,8 @@ public class BtnPointClick : MonoBehaviour
     public void AddPoint()
     {
         string btnName = this.name;
-        string team = btnName.Substring(0, 1);
-        int points = int.Parse(btnName.Substring(2, 1));
+        string team = btnName.Substring(8, 1);
+        int points = int.Parse(btnName.Substring(12, 1));
         pointsManagerScript.AddPoint(team, points);
     }
 }

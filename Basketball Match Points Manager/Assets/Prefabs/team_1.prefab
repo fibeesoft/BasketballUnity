@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 3504088038578572954}
   - component: {fileID: 3504088038578572957}
   - component: {fileID: 3504088038578572955}
+  - component: {fileID: -4082210390555910063}
   - component: {fileID: 3504088038578572952}
   m_Layer: 0
   m_Name: team_1
@@ -247,6 +248,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &-4082210390555910063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3504088038578572966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028abf025b9c4074ebed20fc40b6a870, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3504088038578572952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,6 +305,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3504088038578572957}
         m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -4082210390555910063}
+        m_MethodName: WriteToFile
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -26,7 +26,8 @@ public class CreateButtons : MonoBehaviour
             btnPoint.transform.SetParent(btnParentArray[teamNumber - 1].GetComponent<Transform>());
             btnPoint.transform.localScale = new Vector2(1, 1);
             btnPoint.transform.localPosition = new Vector3(posX, posY, 1);
-            btnPoint.name = $"{teamNumber}_{i}";
+            //btnPoint.name = $"{teamNumber}_{i}";
+            btnPoint.name = $"btn Team{teamNumber}  +{i}";
             btnPoint.GetComponentInChildren<TMP_Text>().text = i.ToString();
             posX += 200;
         }

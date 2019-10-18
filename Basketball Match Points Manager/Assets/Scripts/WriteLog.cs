@@ -2,31 +2,51 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using System.IO;
 
 public class WriteLog : MonoBehaviour
 {
     // Start is called before the first frame update
-    private string fileName;
-    FileStream fs;
-    StreamWriter sw;
+    static string path;
     void Start()
     {
-        //fileName = @"d://test.txt";
-        fileName = "test.txt";
-        fs = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-
+        path = "testLog.txt";
     }
 
-    public void WriteToFile(string message){
-        sw = new StreamWriter(fs);
-        fs.Seek(0, SeekOrigin.End);
+    public void ReadString()
+    {
+        StreamReader reader = new StreamReader(path);
+        Debug.Log(reader.ReadToEnd());
+        reader.Close();
+    }
+
+    void ReadStringv2()
+    {
+        string line = "";
+        using (StreamReader sr = new StreamReader(path))
+        {
+            while ((line = sr.ReadLine()) != null)
+            {
+                Debug.Log(line);
+            }
+        }
+    }
+
+    public void WriteToFile()
+    {
+        StreamWriter writer = new StreamWriter(path, true);
         DateTime dt = DateTime.Now;
-        sw.Write(dt.ToString("HH:mm:ss dd.MM.yy"));
-        sw.Write("     ");
-        sw.WriteLine(message);
-        sw.WriteLine();
-        sw.Flush();
-        //sw.Close();
+        writer.Write(dt.ToString("HH:mm:ss dd.MM.yy"));
+        writer.Write("     ");
+        writer.WriteLine(gameObject.name.Substring(4));
+        writer.Close();
     }
+
+    public void ClearTheFile()
+    {
+        File.WriteAllText(path, "");
+    }
+
+
 }

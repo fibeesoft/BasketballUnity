@@ -37,17 +37,6 @@ public class PointsManager : MonoBehaviour
         return team2Points;
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ResetPoints()
     {
         team1Points = 0;
