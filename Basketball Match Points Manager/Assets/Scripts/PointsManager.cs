@@ -65,11 +65,22 @@ public class PointsManager : MonoBehaviour
         }
     }
 
+    public void MakePointsEqualTo1()
+    {
+        team2Points = -1;
+        team2pointsText.text = team2Points.ToString();
+        team2PointsOptionPanel.text = team2Points.ToString();
+    }
     void UpdatePoints(string team)
     {
         if(team == "1")
         {
-            if (team1Points < 10)
+            if (team1Points < 0)
+            {
+                team1pointsText.text = team1Points.ToString();
+                team1PointsOptionPanel.text = team1Points.ToString();
+            }
+            else if (team1Points < 10)
             {
                 team1pointsText.text = "00" + team1Points.ToString();
                 team1PointsOptionPanel.text = "00" + team1Points.ToString();
@@ -87,7 +98,12 @@ public class PointsManager : MonoBehaviour
         }
         else if (team == "2")
         {
-            if (team2Points < 10)
+            if(team2Points < 0)
+            {
+                team2pointsText.text = team2Points.ToString();
+                team2PointsOptionPanel.text = team2Points.ToString();
+            }
+            else if (team2Points < 10)
             {
                 team2pointsText.text = "00" + team2Points.ToString();
                 team2PointsOptionPanel.text = "00" + team2Points.ToString();

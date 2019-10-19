@@ -34,7 +34,8 @@ public class OptionsPanel : MonoBehaviour
     {
         if(team == 1)
         {
-            team1Name = inpTeam1.text;
+            team1Name = inpTeam1.text.Trim();
+            team1Name = team1Name.Replace(" ", string.Empty);
             team1NameTextField.text = team1Name;
         }
         else if(team == 2)
@@ -65,10 +66,14 @@ public class OptionsPanel : MonoBehaviour
 
     public void DecreasePoints(string team)
     {
-        if(pointsManagerScript.GetTeamPoints(int.Parse(team)) > 0)
+        if(team == "1")
         {
             pointsManagerScript.AddPoint(team, -1);
         }
-        
+        else
+        {
+            pointsManagerScript.MakePointsEqualTo1();
+        }
+               
     }
 }

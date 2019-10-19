@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class TimeManagement : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class TimeManagement : MonoBehaviour
     float counter = 600f;
 
     bool isCounterActive = false;
-
+    DateTime dt1;
+    DateTime dt2;
     void Start()
     {
 
@@ -50,7 +52,39 @@ public class TimeManagement : MonoBehaviour
         }
         else if(val == 1)
         {
+            ResetTime(); //broken
             isCounterActive = true;
+        }
+    }
+
+    public void StopButtonCrasher()
+    {
+        if(dt1 == default(DateTime))
+        {
+            dt1 = DateTime.Now;
+            print("dt1 = " + dt1.Second.ToString());
+        }
+
+        else if(dt2 == default(DateTime))
+        {
+            dt2 = DateTime.Now;
+            print("dt2 = " + dt2.Second.ToString());
+
+            TimeSpan dtRoznica = dt2 - dt1;
+
+            if (dtRoznica.Seconds < 1)
+            {
+                Application.Quit();
+                print("Stop pressed twice within 1 second. App crashed");
+                print(dtRoznica);
+                dt1 = default(DateTime);
+                dt2 = default(DateTime);
+            }
+            else
+            {
+                dt1 = default(DateTime);
+                dt2 = default(DateTime);
+            }
         }
     }
 

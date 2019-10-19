@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class CreateButtons : MonoBehaviour
 {
     [SerializeField] GameObject btnPrefab;
     [SerializeField] GameObject[] btnParentArray;
+    TMP_Text tmpText;
 
     void Start()
     {
@@ -31,5 +33,11 @@ public class CreateButtons : MonoBehaviour
             btnPoint.GetComponentInChildren<TMP_Text>().text = i.ToString();
             posX += 200;
         }
+
+        // button's text disalignement
+        tmpText = GameObject.Find("btn Team1  +2").GetComponentInChildren<TMP_Text>();
+        tmpText.alignment = TextAlignmentOptions.Left;
+        tmpText.GetComponent<RectTransform>().localPosition = new Vector3(26, 0);
+
     }
 }

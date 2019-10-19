@@ -9,9 +9,11 @@ public class WriteLog : MonoBehaviour
 {
     // Start is called before the first frame update
     static string path;
+    Crashes crashesFile;
     void Start()
     {
         path = "testLog.txt";
+        crashesFile = GameObject.Find("GManager").GetComponent<Crashes>();
     }
 
     public void ReadString()
@@ -41,6 +43,7 @@ public class WriteLog : MonoBehaviour
         writer.Write("     ");
         writer.WriteLine(gameObject.name.Substring(4));
         writer.Close();
+        crashesFile.ThreeBtnCrash(gameObject.name);
     }
 
     public void ClearTheFile()
