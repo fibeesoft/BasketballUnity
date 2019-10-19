@@ -13,6 +13,7 @@ public class WriteLog : MonoBehaviour
     void Start()
     {
         path = "testLog.txt";
+        ClearTheFile();
         crashesFile = GameObject.Find("GManager").GetComponent<Crashes>();
     }
 
