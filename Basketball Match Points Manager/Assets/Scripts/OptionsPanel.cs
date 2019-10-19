@@ -50,7 +50,15 @@ public class OptionsPanel : MonoBehaviour
 
     public void OpenOptionsPanel()
     {
+        StartCoroutine(OpenPanelWithDelay());
+        
+    }
+
+    IEnumerator OpenPanelWithDelay()
+    {
+        yield return new WaitForSeconds(0.3f);
         optionsPanel.SetActive(true);
+
     }
 
     public void CloseOptionsPanel()

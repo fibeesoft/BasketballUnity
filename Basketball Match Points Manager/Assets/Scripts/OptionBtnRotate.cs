@@ -4,32 +4,14 @@ using UnityEngine;
 
 public class OptionBtnRotate : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    [SerializeField] Animation anim;
-    [SerializeField] Animator animator;
+    Animator anim;
     void Start()
     {
-        anim = gameObject.GetComponent<Animation>();
-        animator = gameObject.GetComponent<Animator>();
-        animator.SetBool("isRotating", false);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        anim = gameObject.GetComponent<Animator>();
     }
 
     public void RotateTheCog()
     {
-        animator.SetBool("isRotating", true);
-        if(animator.GetBool("isRotating") == true)
-        {
-            anim.Play("CogWheelAnim");
-            animator.SetBool("isRotating", false);
-        }
-        
-        print("rotate");
+        anim.SetTrigger("RotateCog");
     }
 }

@@ -1215,7 +1215,6 @@ GameObject:
   - component: {fileID: 666312522}
   - component: {fileID: 666312519}
   - component: {fileID: 666312523}
-  - component: {fileID: 666312525}
   m_Layer: 0
   m_Name: btn Open Option Menu
   m_TagString: Untagged
@@ -1402,22 +1401,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be268ab3d859184c83b89c33b07a511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  anim: {fileID: 0}
---- !u!111 &666312525
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666312517}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 46b252d8c4a82814cbb266829f2ca605, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!1 &668139667
 GameObject:
   m_ObjectHideFlags: 0
@@ -3439,6 +3422,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1260962446}
         m_MethodName: WriteToFile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 666312524}
+        m_MethodName: RotateTheCog
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
